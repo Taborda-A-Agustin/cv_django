@@ -1,0 +1,126 @@
+{% extends 'curriculumvitae/base.html' %} {% block content %}
+<div class="container">
+  <div class="row">
+    <div class="col"></div>
+    <div class="col-8">
+      <div id="resume">
+        <div class="fill-blue">Curriculum</div>
+
+        <div class="left-column">
+          <div class="substrate">
+            <h2>Mi Perfil</h2>
+            <img
+              class="profilepic"
+              src="{{ cv.fotos.url }}"
+              alt="ProfilePhoto"
+            />
+            <ul class="main-info-list">
+              <li>
+                <span> Nombre Completo </span><i class="fas fa-info-circle"></i
+                ><br /><span>{{ cv.nombre_completo }}</span>
+                <div class="floatlimit"></div>
+              </li>
+              <li>
+                <span>Nacimiento </span><i class="fas fa-address-card"></i
+                ><br /><span>{{ cv.nacimiento }}</span>
+                <div class="floatlimit"></div>
+              </li>
+              <li>
+                <span>Dirección </span><i class="fas fa-sign"></i><br /><span
+                  >{{ cv.domicilio }}</span
+                >
+                <div class="floatlimit"></div>
+              </li>
+              <li>
+                <span>Email <i class="fas fa-envelope-open-text"></i></span
+                ><br /><span class="email">{{ cv.email }}</span>
+                <div class="floatlimit"></div>
+              </li>
+            </ul>
+            <div class="paper-clip"></div>
+          </div>
+          <div class="substrate">
+            <h2>Hobbies</h2>
+            <div>
+              <h3>
+                <span class="time-period-right-blue"
+                  >{{ cv.nombre_hobbie_1 }}</span
+                >
+              </h3>
+              <p>{{ cv.description_hobbie_1 }}</p>
+              <h3>
+                <span class="time-period-right-blue"
+                  >{{ cv.nombre_hobbie_2 }}</span
+                >
+              </h3>
+              <p>{{ cv.description_hobbie_2 }}</p>
+              <h3>
+                <span class="time-period-right-blue"
+                  >{{ cv.nombre_hobbie_3 }}</span
+                >
+              </h3>
+              <p>{{ cv.description_hobbie_3 }}</p>
+            </div>
+          </div>
+        </div>
+        <div class="right-column">
+            {% for trabajo in cv.trabajo.all %}
+          <div class="substrate">
+            <h2>Experiencia</h2>
+            <h3>
+              <span class="time-period-right-blue"
+                >{{ trabajo.default_trabajo }}</span
+              >
+            </h3>
+            <h3>{{ trabajo.nombre_trabajo }}</h3>
+            <p>{{ trabajo.descripcion_trabajo }}</p>
+            <div class="paper-clip"></div>
+          </div>
+          {% endfor %}
+
+          <div class="substrate gradient-blue font-blue">
+            <h2>Sobre mi</h2>
+            <h3>{{ cv.yo_soy }}</h3>
+            <div class="p">{{ cv.yo_soy_description }}</div>
+          </div>
+
+          <div class="substrate">
+            <h2>Habilidades</h2>
+            <div>
+              <h3>
+                <span class="time-period-right-blue"
+                  >{{ cv.nombre_habilidad_1 }}</span
+                >
+              </h3>
+              <p>{{ cv.description_habilidad_1 }}</p>
+              <h3>
+                <span class="time-period-right-blue"
+                  >{{ cv.nombre_habilidad_2 }}</span
+                >
+              </h3>
+              <p>{{ cv.description_habilidad_2 }}</p>
+              <h3>
+                <span class="time-period-right-blue"
+                  >{{ cv.nombre_habilidad_3 }}</span
+                >
+              </h3>
+              <p>{{ cv.description_habilidad_3 }}</p>
+              <h3>
+                <span class="time-period-right-blue"
+                  >{{ cv.nombre_habilidad_4 }}</span
+                >
+              </h3>
+              <p>{{ cv.description_habilidad_4 }}</p>
+            </div>
+            <div class="paper-clip"></div>
+          </div>
+        </div>
+
+        <div class="floatlimit"></div>
+      </div>
+    </div>
+    <div class="col"></div>
+  </div>
+</div>
+
+{% endblock %}

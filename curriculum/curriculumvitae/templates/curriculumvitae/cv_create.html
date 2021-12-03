@@ -1,0 +1,13 @@
+{% extends 'curriculumvitae/base.html' %}
+
+{% block content %}
+<div class="container"> 
+  <h1>Crear nuevo CV</h1>
+  <p>Ingrese sus datos</p>
+  <form method="post">
+    {% csrf_token %}
+    {{form.as_p}}
+    <input type="submit" value="Submit">
+</form>
+</div>
+{% endblock %}

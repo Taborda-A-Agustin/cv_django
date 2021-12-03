@@ -1,0 +1,17 @@
+{% load static %}
+<html>
+    <head>
+        <title>Curriculum Vitae</title>
+        <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+        <link rel="stylesheet" href="{% static 'css/curriculum.css' %}">
+        <script
+        src="https://kit.fontawesome.com/cdc069e01d.js"
+        crossorigin="anonymous"
+      ></script>
+      <title>Curriculum</title>
+    </head>
+    <body class="bg-secondary">
+    {% block content %}
+    {% endblock %}
+    </body>
+</html>
